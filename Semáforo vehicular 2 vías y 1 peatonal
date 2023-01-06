@@ -1,0 +1,80 @@
+
+//SEMAFORO 1
+int ledrojo1=8;
+int ledverde1=9;
+int ledamarillo1=10;
+
+//SEMAFORO 2
+int ledrojo2=1;
+int ledverde2=2;
+int ledamarillo2=3;
+
+//Peatonal
+int ledrojopeatonal=11;
+int ledverdepeatonal=12;
+
+
+void setup() {
+  pinMode(ledrojo1,OUTPUT);
+  pinMode(ledverde1,OUTPUT); 
+  pinMode(ledamarillo1,OUTPUT); 
+  pinMode(ledrojo2,OUTPUT);
+  pinMode(ledverde2,OUTPUT); 
+  pinMode(ledamarillo2,OUTPUT);
+  pinMode(ledverdepeatonal,OUTPUT); 
+  pinMode(ledrojopeatonal,OUTPUT); 
+}
+
+void loop() {
+  // ROJO SEMÁFORO 1 PRENDIDO- VERDE PEATONES Y SEMÁFORO 2 6S
+  digitalWrite(ledrojo1,HIGH);
+  digitalWrite(ledverde1,LOW);
+  digitalWrite(ledamarillo1,LOW);
+  digitalWrite(ledrojo2,LOW);
+  digitalWrite(ledverde2,HIGH);
+  digitalWrite(ledamarillo2,LOW);
+  digitalWrite(ledrojopeatonal,LOW);
+  digitalWrite(ledverdepeatonal,HIGH);
+  delay(6000);
+  //ROJO SEMÁFORO 1 PRENDIDO- VERDE PEATONES PARPADEO 4 S
+digitalWrite(ledverdepeatonal,LOW);
+  delay(500);
+  digitalWrite(ledverdepeatonal,HIGH);
+  delay(500);digitalWrite(ledverdepeatonal,LOW);
+  delay(500);
+  digitalWrite(ledverdepeatonal,HIGH);
+  delay(500);digitalWrite(ledverdepeatonal,LOW);
+  delay(500);
+  digitalWrite(ledverdepeatonal,HIGH);
+  delay(500);digitalWrite(ledverdepeatonal,LOW);
+  delay(500);
+  digitalWrite(ledverdepeatonal,HIGH);
+  delay(500);
+ // // AMARILLO PRENDIDO SEMÁFORO 1
+  digitalWrite(ledrojo1,LOW);
+  digitalWrite(ledverde1,LOW);
+  digitalWrite(ledamarillo1,LOW);
+  digitalWrite(ledrojo2,LOW);
+  digitalWrite(ledverde2,LOW);
+  digitalWrite(ledamarillo2,HIGH);
+  delay(1000);
+// VERDE SEMÁFORO 1 PRENDIDO-ROJO PEATONES Y SEMÁFORO 2 4S
+digitalWrite(ledrojo1,LOW);
+  digitalWrite(ledverde1,HIGH);
+  digitalWrite(ledamarillo1,LOW);
+  digitalWrite(ledrojo2,HIGH);
+  digitalWrite(ledverde2,LOW);
+  digitalWrite(ledamarillo2,LOW);
+  digitalWrite(ledrojopeatonal,HIGH);
+  digitalWrite(ledverdepeatonal,LOW);
+  delay(4000);
+// AMARILLO PRENDIDO SEMÁFORO 2
+digitalWrite(ledrojo1,LOW);
+  digitalWrite(ledverde1,LOW);
+  digitalWrite(ledamarillo1,HIGH);
+  digitalWrite(ledrojo2,LOW);
+  digitalWrite(ledverde2,LOW);
+  digitalWrite(ledamarillo2,LOW);
+  delay(1000);
+
+}
